@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+  서버입장에선 query param 이든, POST content-type: x-www-form-urlencoded든 동일하다
+  그러므로 쿼리파라미터 조회메서드를 그대로 사용해도 상관이 없다
+-->
+<form action="/request-param" method="post">
+  username: <input type="text" name="username">
+  age:      <input type="text" name="age">
+  <button type="submit">전송</button>
+</form>
+</body>
+</html>
