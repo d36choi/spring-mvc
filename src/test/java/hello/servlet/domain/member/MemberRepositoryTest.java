@@ -1,8 +1,11 @@
 package hello.servlet.domain.member;
 
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -40,5 +43,17 @@ class MemberRepositoryTest {
     final List<Member> members = Arrays.asList(savedMember1, savedMember2);
     //then
     Assertions.assertThat(memberRepository.findAll()).isEqualTo(members);
+  }
+  @Test
+  void format_test() {
+    int price = 125000;
+    final String format = NumberFormat.getInstance().format(price);
+    Assertions.assertThat(format).isEqualTo("125,000");
+  }
+  @Test
+  void format_test2() {
+    int price = 32125000;
+    final String format = String.format("%,d",price);
+    Assertions.assertThat(format).isEqualTo("32,125,000");
   }
 }
