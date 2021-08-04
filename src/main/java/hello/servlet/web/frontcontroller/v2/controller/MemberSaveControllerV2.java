@@ -27,7 +27,6 @@ public class MemberSaveControllerV2 implements ControllerV2 {
     //Model에 데이터를 보관한다.
     request.setAttribute("member", member);
 
-    String viewPath = "/WEB-INF/views/save-result.jsp";
-    return new MyView(viewPath);
+    return new MyView("/WEB-INF/views/save-result.jsp");
   }
 }
